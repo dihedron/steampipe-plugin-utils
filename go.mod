@@ -2,7 +2,10 @@ module github.com/dihedron/steampipe-plugin-utils
 
 go 1.19
 
-require github.com/turbot/steampipe-plugin-sdk/v5 v5.0.0
+require (
+	github.com/turbot/steampipe-plugin-sdk/v5 v5.0.0
+	gopkg.in/yaml.v3 v3.0.1
+)
 
 require (
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d // indirect
