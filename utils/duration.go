@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// Duration represents a duration in human-readable format
 type Duration time.Duration
 
 func (d Duration) MarshalJSON() ([]byte, error) {
