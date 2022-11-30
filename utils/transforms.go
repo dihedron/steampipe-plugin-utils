@@ -14,3 +14,17 @@ func ToDuration(ctx context.Context, d *transform.TransformData) (any, error) {
 	}
 	return nil, fmt.Errorf("invalid type for input value: %T", d.Value)
 }
+
+func UnixTimeToDate(ctx context.Context, d *transform.TransformData) (any, error) {
+	var err error
+	switch t := d.Value.(type) {
+	case int64:
+		if t == 0 {
+			return nil, nil
+		}
+		return time.Unix(t, 0).Format(time.RFC3339), nil
+	default:
+		err = fmt.Errorf("invalid type: %T", d.Value)
+	}
+	return nil, err
+}
